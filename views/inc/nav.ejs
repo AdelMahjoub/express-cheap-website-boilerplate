@@ -1,0 +1,27 @@
+<div class="navbar is-info">
+  <div class="container">
+    <div class="navbar-brand">
+      <a href="<%= locals.__routes__.HOME %>" class="navbar-item">
+        <%= locals.__APP_NAME__ %>
+      </a>
+      <a class="navbar-burger burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+
+      </div>
+      <div class="navbar-end">
+        <% Object.keys(locals.__routes__).forEach(route => { %>
+        <a href="<%= locals.__routes__[route] %>"
+          class="navbar-item <%= locals.__pathname__ ===  locals.__routes__[route] ? 'is-active' : '' %>">
+          <%= locals.__pages__[route] %>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
